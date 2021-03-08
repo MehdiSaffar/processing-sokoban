@@ -42,18 +42,18 @@ void setup() {
   textFont(f, 24);
   surface.setResizable(true);
   playerImage = new PImage[4];
-  playerImage[toInt(Direction.Up)] = loadImage("mario_haut.gif");
-  playerImage[toInt(Direction.Down)] = loadImage("mario_bas.gif");
-  playerImage[toInt(Direction.Left)] = loadImage("mario_gauche.gif");
-  playerImage[toInt(Direction.Right)] = loadImage("mario_droite.gif");
-  wallImage = loadImage("mur.jpg");
-  boxImage = loadImage("caisse.jpg");
-  targetBoxImage = loadImage("caisse_ok.jpg");
+  playerImage[toInt(Direction.Up)] = loadImage("img/mario_haut.gif");
+  playerImage[toInt(Direction.Down)] = loadImage("img/mario_bas.gif");
+  playerImage[toInt(Direction.Left)] = loadImage("img/mario_gauche.gif");
+  playerImage[toInt(Direction.Right)] = loadImage("img/mario_droite.gif");
+  wallImage = loadImage("img/mur.jpg");
+  boxImage = loadImage("img/caisse.jpg");
+  targetBoxImage = loadImage("img/caisse_ok.jpg");
 }
 
 void settings() {
   board = new Board();
-  board.loadBoard("lvl" + levelIndex + ".txt");
+  board.loadBoard("levels/lvl" + levelIndex + ".txt");
   w = TILE_SIZE * board.w;
   h = TILE_SIZE * board.h;
   size(w, h);
@@ -69,7 +69,7 @@ void draw() {
     board.draw();
   } else {
     levelIndex++;
-    board.loadBoard("lvl" + levelIndex + ".txt");
+    board.loadBoard("levels/lvl" + levelIndex + ".txt");
     w = TILE_SIZE * board.w;
     h = TILE_SIZE * board.h;
     surface.setSize(w, h);
